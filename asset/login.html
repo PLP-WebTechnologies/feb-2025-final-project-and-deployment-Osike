@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Login Page</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Login Section -->
+        <div class="form-container glass-prism" id="login-section">
+            <div class="logo">
+                <i class="fas fa-user-circle"></i>
+            </div>
+            <h2>Login</h2>
+            <form>
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="Username" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="btn primary-btn">Login</button>
+                <div class="links">
+                    <a href="#" id="forgot-password-link">Forgot Password?</a>
+                    <a href="#" id="register-link">Register</a>
+                </div>
+            </form>
+        </div>
+
+        <!-- Register Section -->
+        <div class="form-container glass-prism hidden" id="register-section">
+            <div class="logo">
+                <i class="fas fa-user-plus"></i>
+            </div>
+            <h2>Register</h2>
+            <form>
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" placeholder="Email" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="Username" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="btn primary-btn">Register</button>
+                <div class="links">
+                    <a href="#" id="back-to-login-from-register">Back to Login</a>
+                </div>
+            </form>
+        </div>
+
+        <!-- Forgot Password Section -->
+        <div class="form-container glass-prism hidden" id="forgot-password-section">
+            <div class="logo">
+                <i class="fas fa-key"></i>
+            </div>
+            <h2>Forgot Password</h2>
+            <form>
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" placeholder="Email" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="Username" required>
+                </div>
+                <button type="submit" class="btn primary-btn">Retrieve Password</button>
+                <div class="links">
+                    <a href="#" id="back-to-login-from-forgot">Back to Login</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>

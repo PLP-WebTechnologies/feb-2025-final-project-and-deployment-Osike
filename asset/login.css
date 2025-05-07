@@ -13,7 +13,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(135deg, #3498db, #9b59b6);
+    background: linear-gradient(135deg, #848404, #0d0c0e);
     padding: 20px;
 }
 
@@ -103,7 +103,7 @@ input:focus {
 
 /* Buttons */
 .btn {
-    background: linear-gradient(45deg, #3498db, #9b59b6);
+    background: linear-gradient(45deg, #080a0a, #eadf1c);
     border: none;
     outline: none;
     padding: 15px;
@@ -117,7 +117,7 @@ input:focus {
 }
 
 .btn:hover {
-    background: linear-gradient(45deg, #2980b9, #8e44ad);
+    background: linear-gradient(45deg, #0d1114, #c9df08);
     transform: translateY(-3px);
     box-shadow: 0 7px 15px rgba(0, 0, 0, 0.3);
 }

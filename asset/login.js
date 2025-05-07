@@ -12,6 +12,18 @@ const backToLoginFromRegister = document.getElementById('back-to-login-from-regi
 
 // Forgot Password section links
 const backToLoginFromForgot = document.getElementById('back-to-login-from-forgot');
+// login functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const loginButton = document.querySelector(".btn.primary-btn");
+
+    loginButton.addEventListener("click", (event) => {
+        event.preventDefault(); // Prevent default form submission
+        window.location.href = "home.html"; // Redirect to home page
+    }
+    );
+});
+
+
 
 // Show section function
 function showSection(sectionToShow) {

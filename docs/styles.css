@@ -1,0 +1,214 @@
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  body {
+    background-color: #f8f9fa;
+    color: #333;
+  }
+  
+  /* Navigation Bar */
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: #0B0E23;
+    color: white;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .logo-icon {
+    font-size: 1.8rem;
+  }
+  
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .dropdown {
+    position: relative;
+  }
+  
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 120px;
+  }
+  
+  .dropdown-menu a {
+    color: #333 !important;
+    display: block;
+    padding: 0.5rem 1rem;
+  }
+  
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  
+  .mobile-menu-btn {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  /* Hero Section */
+  .hero {
+    padding: 8rem 5% 4rem;
+    background: linear-gradient(rgba(11, 14, 35, 0.9), rgba(11, 14, 35, 0.9)), 
+                url('assets/images/blockchain-bg.jpg') no-repeat center/cover;
+    color: white;
+    text-align: center;
+  }
+  
+  .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+  }
+  
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .primary-btn {
+    background: #F0B90B;
+    color: #0B0E23;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  
+  .secondary-btn {
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  
+  /* Features Section */
+  .features {
+    padding: 4rem 5%;
+    text-align: center;
+  }
+  
+  .features h3 {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: #0B0E23;
+  }
+  
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+  
+  .feature-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  }
+  
+  .feature-card i {
+    font-size: 2.5rem;
+    color: #F0B90B;
+    margin-bottom: 1rem;
+  }
+  
+  .feature-card h4 {
+    margin-bottom: 0.5rem;
+    color: #0B0E23;
+  }
+  
+  /* Market Ticker */
+  .market-ticker {
+    background: #0B0E23;
+    padding: 1rem 5%;
+    overflow: hidden;
+  }
+  
+  .ticker-container {
+    display: flex;
+    gap: 2rem;
+    animation: ticker-scroll 20s linear infinite;
+  }
+  
+  .ticker-item {
+    color: white;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  
+  .ticker-item span {
+    color: #F0B90B;
+  }
+  
+  /* Animations */
+  @keyframes ticker-scroll {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+    }
+  
+    .mobile-menu-btn {
+      display: block;
+    }
+  
+    .hero h2 {
+      font-size: 2rem;
+    }
+  
+    .cta-buttons {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }

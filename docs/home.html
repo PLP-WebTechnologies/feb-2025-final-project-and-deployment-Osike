@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoWallet - Your Digital Asset Portfolio</title>
+    <link rel="stylesheet" href="HOME.CSS">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+</head>
+<body class="dark-mode">
+    <!-- Header Section -->
+    <header>
+        <div class="header-container">
+            <div class="logo-container">
+                <div class="logo">
+                    <i class="fas fa-coins"></i>
+                    <span>CryptoWallet</span>
+                </div>
+                <button id="mobile-menu-toggle" class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            
+            <nav id="main-nav">
+                <ul class="nav-links">
+                    <li><a href="#" class="active"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#"><i class="fas fa-chart-line"></i> Markets</a></li>
+                    <li><a href="#"><i class="fas fa-exchange-alt"></i> Trade</a></li>
+                    <li><a href="#" class="current"><i class="fas fa-wallet"></i> Wallet</a></li>
+                    <li><a href="#"><i class="fas fa-history"></i> Orders</a></li>
+                    <li><a href="#"><i class="fas fa-user-circle"></i> Account</a></li>
+                </ul>
+                <div class="header-controls">
+                    <div class="language-selector">
+                        <select id="language">
+                            <option value="en">EN</option>
+                            <option value="es">ES</option>
+                            <option value="fr">FR</option>
+                            <option value="zh">ZH</option>
+                        </select>
+                    </div>
+                    <button id="theme-toggle" class="theme-toggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Global Market Overview -->
+    <section class="market-overview">
+        <div class="container">
+            <div class="market-data">
+                <div class="market-item">
+                    <span class="market-label">Market Cap</span>
+                    <span class="market-value" id="market-cap">$2.14T</span>
+                </div>
+                <div class="market-item">
+                    <span class="market-label">24h Volume</span>
+                    <span class="market-value" id="volume-24h">$78.5B</span>
+                </div>
+                <div class="market-item">
+                    <span class="market-label">BTC Dominance</span>
+                    <span class="market-value" id="btc-dominance">42.8%</span>
+                </div>
+                <div class="market-item">
+                    <span class="market-label">ETH Dominance</span>
+                    <span class="market-value" id="eth-dominance">18.7%</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Section -->
+    <main>
+        <div class="container">
+            <!-- Wallet Overview -->
+            <section class="wallet-overview">
+                <div class="balance-header">
+                    <h2>Wallet Overview</h2>
+                    <div class="currency-selector">
+                        <span>Display in:</span>
+                        <select id="currency-selector">
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="GBP">GBP</option>
+                            <option value="JPY">JPY</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="total-balance">
+                    <div class="balance-info">
+                        <h3>Total Balance</h3>
+                        <div class="balance-amount">
+                            <span id="total-balance-value">$127,245.86</span>
+                            <span id="balance-change" class="up">+5.8% <i class="fas fa-caret-up"></i></span>
+                        </div>
+                    </div>
+                    <div class="balance-actions">
+                        <button class="btn primary"><i class="fas fa-plus"></i> Deposit</button>
+                        <button class="btn secondary"><i class="fas fa-arrow-right"></i> Withdraw</button>
+                        <button class="btn tertiary"><i class="fas fa-sync-alt"></i> Refresh</button>
+                    </div>
+                </div>
+                
+                <div class="allocation-chart-container">
+                    <div class="pie-chart-wrapper">
+                        <canvas id="allocation-chart"></canvas>
+                    </div>
+                    <div class="top-assets">
+                        <h3>Top Assets</h3>
+                        <div class="asset-pill" style="background-color: rgba(247, 147, 26, 0.2); border-color: #F7931A;">
+                            <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.svg?v=013" alt="BTC">
+                            <span>Bitcoin</span>
+                            <span>47%</span>
+                        </div>
+                        <div class="asset-pill" style="background-color: rgba(98, 126, 234, 0.2); border-color: #627EEA;">
+                            <img src="https://cryptologos.cc/logos/ethereum-eth-logo.svg?v=013" alt="ETH">
+                            <span>Ethereum</span>
+                            <span>26%</span>
+                        </div>
+                        <div class="asset-pill" style="background-color: rgba(136, 176, 75, 0.2); border-color: #88B04B;">
+                            <img src="https://cryptologos.cc/logos/solana-sol-logo.svg?v=013" alt="SOL">
+                            <span>Solana</span>
+                            <span>12%</span>
+                        </div>
+                        <div class="asset-pill" style="background-color: rgba(0, 119, 255, 0.2); border-color: #0077FF;">
+                            <img src="https://cryptologos.cc/logos/cardano-ada-logo.svg?v=013" alt="ADA">
+                            <span>Cardano</span>
+                            <span>8%</span>
+                        </div>
+                        <div class="asset-pill" style="background-color: rgba(163, 203, 56, 0.2); border-color: #A3CB38;">
+                            <img src="https://cryptologos.cc/logos/polkadot-new-dot-logo.svg?v=013" alt="DOT">
+                            <span>Polkadot</span>
+                            <span>7%</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Asset Price Charts -->
+            <section class="price-charts">
+                <div class="chart-header">
+                    <h2>Price Charts</h2>
+                    <div class="chart-controls">
+                        <div class="asset-selector">
+                            <select id="chart-asset-selector">
+                                <option value="BTC">Bitcoin (BTC)</option>
+                                <option value="ETH">Ethereum (ETH)</option>
+                                <option value="SOL">Solana (SOL)</option>
+                                <option value="ADA">Cardano (ADA)</option>
+                                <option value="DOT">Polkadot (DOT)</option>
+                            </select>
+                        </div>
+                        <div class="timeframe-selector">
+                            <button class="timeframe-btn active" data-timeframe="1D">1D</button>
+                            <button class="timeframe-btn" data-timeframe="7D">7D</button>
+                            <button class="timeframe-btn" data-timeframe="1M">1M</button>
+                            <button class="timeframe-btn" data-timeframe="1Y">1Y</button>
+                            <button class="timeframe-btn" data-timeframe="ALL">ALL</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="price-chart-container">
+                    <canvas id="price-chart"></canvas>
+                </div>
+            </section>
+
+            <!-- Asset List -->
+            <section class="asset-list">
+                <h2>Your Assets</h2>
+                <div class="asset-table-container">
+                    <table class="asset-table">
+                        <thead>
+                            <tr>
+                                <th>Asset</th>
+                                <th>Price</th>
+                                <th>24h Change</th>
+                                <th>Holdings</th>
+                                <th>Value</th>
+                                <th>Allocation</th>
+                                <th>Chart</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="asset-table-body">
+                            <!-- Asset rows will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-coins"></i>
+                    <span>CryptoWallet</span>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>About</h4>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Press</a></li>
+                            <li><a href="#">Blog</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Risk Warning</a></li>
+                            <li><a href="#">Cookie Policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="#">Help Center</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Feedback</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Connect</h4>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-telegram"></i></a>
+                            <a href="#"><i class="fab fa-reddit"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 CryptoWallet. All rights reserved.</p>
+                <p>Disclaimer: Cryptocurrency investments are volatile and high risk.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Trade Modal -->
+    <div id="trade-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-asset-name">Trade Bitcoin (BTC)</h3>
+                <button class="close-modal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="trade-asset-info">
+                    <div class="asset-icon-large">
+                        <img id="modal-asset-icon" src="https://cryptologos.cc/logos/bitcoin-btc-logo.svg?v=013" alt="BTC">
+                    </div>
+                    <div class="asset-price-info">
+                        <div class="current-price">
+                            <span class="label">Current Price:</span>
+                            <span id="modal-asset-price" class="value">$65,432.10</span>
+                        </div>
+                        <div class="price-change">
+                            <span class="label">24h Change:</span>
+                            <span id="modal-price-change" class="value up">+2.34% <i class="fas fa-caret-up"></i></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="trade-tabs">
+                    <button class="trade-tab active" data-tab="buy">Buy</button>
+                    <button class="trade-tab" data-tab="sell">Sell</button>
+                </div>
+                
+                <div class="trade-form-container">
+                    <form id="trade-form">
+                        <div class="form-group">
+                            <label for="trade-amount">Amount</label>
+                            <div class="input-with-select">
+                                <input type="number" id="trade-amount" placeholder="0.00" step="0.0001" min="0">
+                                <select id="trade-type">
+                                    <option value="BTC" selected>BTC</option>
+                                    <option value="USD">USD</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Available Balance</label>
+                            <div class="balance-display">
+                                <span id="available-balance">3.2451 BTC</span>
+                                <button type="button" id="max-amount" class="max-btn">MAX</button>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Total Value</label>
+                            <div class="total-value-display">
+                                <span id="trade-total-value">$0.00</span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="percentage-buttons">
+                                <button type="button" class="percentage-btn" data-percentage="25">25%</button>
+                                <button type="button" class="percentage-btn" data-percentage="50">50%</button>
+                                <button type="button" class="percentage-btn" data-percentage="75">75%</button>
+                                <button type="button" class="percentage-btn" data-percentage="100">100%</button>
+                            </div>
+                        </div>
+                        
+                        <div class="trade-actions">
+                            <button type="button" id="buy-button" class="btn primary trade-btn">Buy BTC</button>
+                            <button type="button" id="sell-button" class="btn danger trade-btn" style="display: none;">Sell BTC</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="home.js"></script>
+</body>
+</html>

@@ -1,19 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>sTICKY NOTES</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CryptoTrade | Buy & Sell Cryptocurrency</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <header>
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="logo">
+      <span class="logo-icon">₿</span>
+      <h1>CryptoWallet</h1>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#">Markets</a></li>
+      <li><a href="#">Trade</a></li>
+      <li><a href="#">Learn</a></li>
+      <li class="dropdown">
+        <a href="#" id="accounts-toggle">Accounts <i class="fas fa-chevron-down"></i></a>
+        <div class="dropdown-menu">
+          <a href="login.html">Login</a>
+          <a href="#">Sign Up</a>
+        </div>
+      </li>
+    </ul>
+    <div class="mobile-menu-btn">
+      <i class="fas fa-bars"></i>
+    </div>
+  </nav>
 
-    </header>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Trade Crypto Securely with Lowest Fees</h2>
+      <p>Buy, sell, and manage 100+ cryptocurrencies with institutional-grade security.</p>
+      <div class="cta-buttons">
+        <button class="primary-btn">Get Started</button>
+        <button class="secondary-btn">Learn More</button>
+      </div>
+    </div>
+  </section>
 
-    <footer>
-        
+  <!-- Features Section -->
+  <section class="features">
+    <h3>Why Choose CryptoTrade?</h3>
+    <div class="features-grid">
+      <div class="feature-card">
+        <i class="fas fa-shield-alt"></i>
+        <h4>Secure Transactions</h4>
+        <p>Bank-level encryption & cold storage.</p>
+      </div>
+      <div class="feature-card">
+        <i class="fas fa-percentage"></i>
+        <h4>Low Trading Fees</h4>
+        <p>0.1% fees, no hidden costs.</p>
+      </div>
+      <div class="feature-card">
+        <i class="fas fa-headset"></i>
+        <h4>24/7 Support</h4>
+        <p>Live chat & email support anytime.</p>
+      </div>
+      <div class="feature-card">
+        <i class="fab fa-bitcoin"></i>
+        <h4>100+ Cryptos</h4>
+        <p>Trade Bitcoin, Ethereum, and more.</p>
+      </div>
+    </div>
+  </section>
 
-    </footer>
-    
+  <!-- Market Ticker -->
+  <section class="market-ticker">
+    <div class="ticker-container">
+      <div class="ticker-item"><span>BTC</span> $63,420 ▲</div>
+      <div class="ticker-item"><span>ETH</span> $3,210 ▲</div>
+      <div class="ticker-item"><span>SOL</span> $142 ▼</div>
+      <div class="ticker-item"><span>BNB</span> $585 ▲</div>
+      <div class="ticker-item"><span>XRP</span> $0.52 ▲</div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
 </body>
 </html>
